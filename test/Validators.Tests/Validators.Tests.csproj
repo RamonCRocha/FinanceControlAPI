@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\FinanceControlAPI.Application\FinanceControlAPI.Application.csproj" />
+    <ProjectReference Include="..\..\src\FinanceControlAPI.Communication\FinanceControlAPI.Communication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
