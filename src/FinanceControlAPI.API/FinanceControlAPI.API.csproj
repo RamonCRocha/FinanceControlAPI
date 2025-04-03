@@ -14,4 +14,11 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceControlAPI.Application\FinanceControlAPI.Application.csproj" />
+    <ProjectReference Include="..\FinanceControlAPI.Communication\FinanceControlAPI.Communication.csproj" />
+    <ProjectReference Include="..\FinanceControlAPI.Exception\FinanceControlAPI.Exception.csproj" />
+    <ProjectReference Include="..\FinanceControlAPI.Infrastructure\FinanceControlAPI.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

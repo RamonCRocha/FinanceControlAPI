@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceControlAPI.Communication\FinanceControlAPI.Communication.csproj" />
+    <ProjectReference Include="..\FinanceControlAPI.Domain\FinanceControlAPI.Domain.csproj" />
+    <ProjectReference Include="..\FinanceControlAPI.Exception\FinanceControlAPI.Exception.csproj" />
+  </ItemGroup>
+
+</Project>
