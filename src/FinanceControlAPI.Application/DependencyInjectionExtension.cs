@@ -1,5 +1,6 @@
 ﻿using FinanceControlAPI.Application.AutoMapper;
 using FinanceControlAPI.Application.UseCases.Expenses.GetAll;
+using FinanceControlAPI.Application.UseCases.Expenses.GetById;
 using FinanceControlAPI.Application.UseCases.Expenses.Register;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,6 +22,6 @@ public static class DependencyInjectionExtension
   {
     services.AddScoped<IRegisterExpenseUseCase, RegisterExpenseUseCase>();
     services.AddScoped<IGetAllExpensesUseCase, GetAllExpensesUseCase>();
-    services.AddScoped<IGetAllExpensesUseCase, GetAllExpensesUseCase>();
+    services.AddScoped<IGetExpenseByIdUseCase, GetExpenseByIdUseCase>();
   }
 }
