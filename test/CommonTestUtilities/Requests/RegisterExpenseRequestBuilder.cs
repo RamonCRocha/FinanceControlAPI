@@ -3,9 +3,9 @@ using FinanceControlAPI.Communication.Enums;
 using FinanceControlAPI.Communication.Requests;
 
 namespace CommonTestUtilities.Requests;
-public class RegisterExpenseRequestBuilder
+public static class RegisterExpenseRequestBuilder
 {
-  public RegisterExpenseRequest Build()
+  public static RegisterExpenseRequest Build()
   {
     return new Faker<RegisterExpenseRequest>()
       .RuleFor(r => r.Title, faker => faker.Commerce.ProductName())

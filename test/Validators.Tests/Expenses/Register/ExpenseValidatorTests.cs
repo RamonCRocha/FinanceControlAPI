@@ -1,5 +1,6 @@
-﻿using FinanceControlAPI.Application.UseCases.Expenses;
-using FinanceControlAPI.Communication.Requests;
+﻿using CommonTestUtilities.Requests;
+using FinanceControlAPI.Application.UseCases.Expenses;
+using FluentAssertions;
 
 namespace Validators.Tests.Expenses.Register;
 public class ExpenseValidatorTests
@@ -9,16 +10,10 @@ public class ExpenseValidatorTests
   {
     var validator = new ExpenseValidator();
 
-    var request = new RegisterExpenseRequest
-    {
-      Amount = 100,
-      Date = DateTime.Now.AddDays(-1),
-      Title = "Test",
-      PaymentType = FinanceControlAPI.Communication.Enums.PaymentType.DebitCard
-    };
+    var request = RegisterExpenseRequestBuilder.Build();
 
     var result = validator.Validate(request);
 
-    Assert.True(result.IsValid);
+    result.IsValid.Should().BeTrue();
   }
 }
