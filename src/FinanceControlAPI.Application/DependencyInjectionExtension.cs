@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FinanceControlAPI.Application.AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FinanceControlAPI.Application;
 public static class DependencyInjectionExtension
@@ -11,6 +12,7 @@ public static class DependencyInjectionExtension
 
   private static void AddAutoMapper(IServiceCollection services)
   {
+    services.AddAutoMapper(typeof(AutoMapping));
   }
 
   private static void AddUseCases(IServiceCollection services)
