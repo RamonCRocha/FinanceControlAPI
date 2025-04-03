@@ -195,4 +195,4 @@ FakesAssemblies/
 coverage.opencover.xml
 
 # Configuration files  
-appsettings.Development.json 
+**/appsettings.Development.json
