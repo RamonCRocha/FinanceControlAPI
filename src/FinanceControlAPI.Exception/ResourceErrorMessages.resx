@@ -136,7 +136,7 @@
     <value>Expense not found.</value>
   </data>
   <data name="INVALID_PASSWORD" xml:space="preserve">
-    <value>The password must contain at least 8 characters, one uppercase letter, one lowercase letter and one special character (! ? . # @).</value>
+    <value>The password must contain at least 8 characters, one uppercase letter, one lowercase letter and one special character (! ? * .).</value>
   </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>Name cannot be empty.</value>

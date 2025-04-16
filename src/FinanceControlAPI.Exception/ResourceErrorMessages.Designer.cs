@@ -115,7 +115,7 @@ namespace FinanceControlAPI.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The password must contain at least 8 characters, one uppercase letter, one lowercase letter and one special character (! ? . # @)..
+        ///   Looks up a localized string similar to The password must contain at least 8 characters, one uppercase letter, one lowercase letter and one special character (! ? * .)..
         /// </summary>
         public static string INVALID_PASSWORD {
             get {
