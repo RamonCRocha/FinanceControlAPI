@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FinanceControlAPI.Communication.Requests;
-using FinanceControlAPI.Communication.Responses;
+using FinanceControlAPI.Communication.Responses.Expenses;
 using FinanceControlAPI.Domain.Entities;
 
 namespace FinanceControlAPI.Application.AutoMapper;

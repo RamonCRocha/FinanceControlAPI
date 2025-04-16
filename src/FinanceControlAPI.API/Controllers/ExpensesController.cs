@@ -5,6 +5,7 @@ using FinanceControlAPI.Application.UseCases.Expenses.Register;
 using FinanceControlAPI.Application.UseCases.Expenses.Update;
 using FinanceControlAPI.Communication.Requests;
 using FinanceControlAPI.Communication.Responses;
+using FinanceControlAPI.Communication.Responses.Expenses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceControlAPI.API.Controllers;

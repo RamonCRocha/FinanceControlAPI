@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FinanceControlAPI.Communication.Responses;
+using FinanceControlAPI.Communication.Responses.Expenses;
 using FinanceControlAPI.Domain.Repositories;
 using FinanceControlAPI.Exception;
 using FinanceControlAPI.Exception.ExceptionBase;

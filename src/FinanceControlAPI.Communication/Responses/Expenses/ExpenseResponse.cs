@@ -1,6 +1,6 @@
 ﻿using FinanceControlAPI.Communication.Enums;
 
-namespace FinanceControlAPI.Communication.Responses;
+namespace FinanceControlAPI.Communication.Responses.Expenses;
 public class ExpenseResponse
 {
   public long Id { get; set; }

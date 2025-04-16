@@ -1,4 +1,4 @@
-﻿namespace FinanceControlAPI.Communication.Responses;
+﻿namespace FinanceControlAPI.Communication.Responses.Expenses;
 public class ShortExpenseResponse
 {
   public long Id { get; set; }

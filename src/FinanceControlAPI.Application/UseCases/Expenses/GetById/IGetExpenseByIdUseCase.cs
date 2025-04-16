@@ -1,4 +1,4 @@
-﻿using FinanceControlAPI.Communication.Responses;
+﻿using FinanceControlAPI.Communication.Responses.Expenses;
 
 namespace FinanceControlAPI.Application.UseCases.Expenses.GetById;
 public interface IGetExpenseByIdUseCase

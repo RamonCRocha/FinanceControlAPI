@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FinanceControlAPI.Communication.Responses;
+using FinanceControlAPI.Communication.Responses.Expenses;
 using FinanceControlAPI.Domain.Repositories;
 
 namespace FinanceControlAPI.Application.UseCases.Expenses.GetAll;
