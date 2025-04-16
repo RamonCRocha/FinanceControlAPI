@@ -14,11 +14,17 @@ public class AutoMapping : Profile
 
   private void RequestToEntity()
   {
+    //Expenses
     CreateMap<RegisterExpenseRequest, Expense>();
+
+    //Users
+    CreateMap<RegisterUserRequest, User>()
+      .ForMember(user => user.Password, config => config.Ignore());
   }
 
   private void EntityToResponse()
   {
+    //Expenses
     CreateMap<Expense, RegisterExpenseResponse>();
     CreateMap<Expense, ShortExpenseResponse>();
     CreateMap<Expense, ExpenseResponse>();
