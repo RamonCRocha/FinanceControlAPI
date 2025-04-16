@@ -1,5 +1,4 @@
 ﻿using FinanceControlAPI.Domain.Enums;
-using System.Data;
 
 namespace FinanceControlAPI.Domain.Entities;
 public class User
