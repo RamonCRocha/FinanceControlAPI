@@ -1,4 +1,5 @@
 ﻿using FinanceControlAPI.Domain.Repositories;
+using FinanceControlAPI.Domain.Repositories.Expenses;
 using FinanceControlAPI.Exception;
 using FinanceControlAPI.Exception.ExceptionBase;
 

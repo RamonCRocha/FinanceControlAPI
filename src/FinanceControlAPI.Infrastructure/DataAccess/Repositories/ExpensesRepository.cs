@@ -1,5 +1,5 @@
 ﻿using FinanceControlAPI.Domain.Entities;
-using FinanceControlAPI.Domain.Repositories;
+using FinanceControlAPI.Domain.Repositories.Expenses;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceControlAPI.Infrastructure.DataAccess.Repositories;

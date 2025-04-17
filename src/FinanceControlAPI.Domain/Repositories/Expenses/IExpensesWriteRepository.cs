@@ -1,6 +1,6 @@
 ﻿using FinanceControlAPI.Domain.Entities;
 
-namespace FinanceControlAPI.Domain.Repositories;
+namespace FinanceControlAPI.Domain.Repositories.Expenses;
 public interface IExpensesWriteRepository
 {
   Task Add(Expense expense);

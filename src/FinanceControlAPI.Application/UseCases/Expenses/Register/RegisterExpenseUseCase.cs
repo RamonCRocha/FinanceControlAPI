@@ -3,6 +3,7 @@ using FinanceControlAPI.Communication.Requests;
 using FinanceControlAPI.Communication.Responses.Expenses;
 using FinanceControlAPI.Domain.Entities;
 using FinanceControlAPI.Domain.Repositories;
+using FinanceControlAPI.Domain.Repositories.Expenses;
 using FinanceControlAPI.Exception.ExceptionBase;
 
 namespace FinanceControlAPI.Application.UseCases.Expenses.Register;

@@ -3,6 +3,7 @@ using FinanceControlAPI.Domain.Repositories;
 using FinanceControlAPI.Exception.ExceptionBase;
 using FinanceControlAPI.Exception;
 using FinanceControlAPI.Communication.Requests;
+using FinanceControlAPI.Domain.Repositories.Expenses;
 
 namespace FinanceControlAPI.Application.UseCases.Expenses.Update;
 public class UpdateExpenseUseCase : IUpdateExpenseUseCase
