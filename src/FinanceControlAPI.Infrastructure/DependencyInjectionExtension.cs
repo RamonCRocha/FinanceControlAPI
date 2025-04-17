@@ -1,4 +1,5 @@
 ﻿using FinanceControlAPI.Domain.Repositories;
+using FinanceControlAPI.Domain.Secutiry.Cryptography;
 using FinanceControlAPI.Infrastructure.DataAccess;
 using FinanceControlAPI.Infrastructure.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ public static class DependencyInjectionExtension
   {
     AddDbContext(services, configuration);
     AddRepositories(services);
+    AddSecurityServices(services);
   }
 
   private static void AddRepositories(IServiceCollection services)
@@ -27,5 +29,10 @@ public static class DependencyInjectionExtension
     var connectionString = configuration.GetConnectionString("Connection");
 
     services.AddDbContext<FinanceDbContext>(config => config.UseSqlServer(connectionString));
+  }
+
+  private static void AddSecurityServices(IServiceCollection services)
+  {
+    services.AddScoped<IPasswordEncrypter, Security.BCrypt>();
   }
 }
