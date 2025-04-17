@@ -4,6 +4,7 @@ using FinanceControlAPI.Application.UseCases.Expenses.GetAll;
 using FinanceControlAPI.Application.UseCases.Expenses.GetById;
 using FinanceControlAPI.Application.UseCases.Expenses.Register;
 using FinanceControlAPI.Application.UseCases.Expenses.Update;
+using FinanceControlAPI.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FinanceControlAPI.Application;
@@ -22,10 +23,14 @@ public static class DependencyInjectionExtension
 
   private static void AddUseCases(IServiceCollection services)
   {
+    //Expenses
     services.AddScoped<IRegisterExpenseUseCase, RegisterExpenseUseCase>();
     services.AddScoped<IGetAllExpensesUseCase, GetAllExpensesUseCase>();
     services.AddScoped<IGetExpenseByIdUseCase, GetExpenseByIdUseCase>();
     services.AddScoped<IDeleteExpenseUseCase, DeleteExpenseUseCase>();
     services.AddScoped<IUpdateExpenseUseCase, UpdateExpenseUseCase>();
+
+    //Users
+    services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
   }
 }
