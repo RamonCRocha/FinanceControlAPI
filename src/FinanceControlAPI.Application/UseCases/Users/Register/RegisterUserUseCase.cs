@@ -8,6 +8,7 @@ using FinanceControlAPI.Exception.ExceptionBase;
 using FinanceControlAPI.Exception;
 using FluentValidation.Results;
 using FinanceControlAPI.Domain.Entities;
+using FinanceControlAPI.Domain.Secutiry.Tokens;
 
 namespace FinanceControlAPI.Application.UseCases.Users.Register;
 public class RegisterUserUseCase : IRegisterUserUseCase
@@ -17,14 +18,16 @@ public class RegisterUserUseCase : IRegisterUserUseCase
   private readonly IUsersReadRepository _readRepository;
   private readonly IUsersWriteRepository _writeRepository;
   private readonly IUnitOfWork _unitOfWork;
+  private readonly IAccessTokenGenerator _accessTokenGenerator;
 
-  public RegisterUserUseCase(IMapper mapper, IPasswordEncrypter passwordEncrypter, IUsersReadRepository readRepository, IUsersWriteRepository writeRepository, IUnitOfWork unitOfWork)
+  public RegisterUserUseCase(IAccessTokenGenerator tokenGenerator, IMapper mapper, IPasswordEncrypter passwordEncrypter, IUsersReadRepository readRepository, IUsersWriteRepository writeRepository, IUnitOfWork unitOfWork)
   {
     _mapper = mapper;
     _passwordEncrypter = passwordEncrypter;
     _readRepository = readRepository;
     _writeRepository = writeRepository;
     _unitOfWork = unitOfWork;
+    _accessTokenGenerator = tokenGenerator;
   }
 
   public async Task<RegisterUserResponse> Execute(RegisterUserRequest request)
@@ -42,6 +45,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     return new RegisterUserResponse
     {
       Name = user.Name,
+      Token = _accessTokenGenerator.Generate(user)
     };
   }
 

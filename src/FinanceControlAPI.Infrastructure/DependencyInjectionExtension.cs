@@ -2,8 +2,10 @@
 using FinanceControlAPI.Domain.Repositories.Expenses;
 using FinanceControlAPI.Domain.Repositories.Users;
 using FinanceControlAPI.Domain.Secutiry.Cryptography;
+using FinanceControlAPI.Domain.Secutiry.Tokens;
 using FinanceControlAPI.Infrastructure.DataAccess;
 using FinanceControlAPI.Infrastructure.DataAccess.Repositories;
+using FinanceControlAPI.Infrastructure.Security.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +17,7 @@ public static class DependencyInjectionExtension
   {
     AddDbContext(services, configuration);
     AddRepositories(services);
-    AddSecurityServices(services);
+    AddSecurityServices(services, configuration);
   }
 
   private static void AddRepositories(IServiceCollection services)
@@ -40,8 +42,16 @@ public static class DependencyInjectionExtension
     services.AddDbContext<FinanceDbContext>(config => config.UseSqlServer(connectionString));
   }
 
-  private static void AddSecurityServices(IServiceCollection services)
+  private static void AddSecurityServices(IServiceCollection services, IConfiguration configuration)
   {
+    //BCRYPT
     services.AddScoped<IPasswordEncrypter, Security.Cryptography.BCrypt>();
+
+    //JWT
+    var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpiresMinutes");
+    var signingKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+
+    services.AddScoped<IAccessTokenGenerator>(config => new JwtTokenGenerator(expirationTimeMinutes, signingKey!));
+
   }
 }
