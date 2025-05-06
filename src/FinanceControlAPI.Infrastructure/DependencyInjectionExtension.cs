@@ -42,6 +42,6 @@ public static class DependencyInjectionExtension
 
   private static void AddSecurityServices(IServiceCollection services)
   {
-    services.AddScoped<IPasswordEncrypter, Security.BCrypt>();
+    services.AddScoped<IPasswordEncrypter, Security.Cryptography.BCrypt>();
   }
 }
