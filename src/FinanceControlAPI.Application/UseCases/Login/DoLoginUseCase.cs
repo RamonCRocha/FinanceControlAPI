@@ -6,7 +6,7 @@ using FinanceControlAPI.Domain.Secutiry.Tokens;
 using FinanceControlAPI.Exception.ExceptionBase;
 
 namespace FinanceControlAPI.Application.UseCases.Login;
-public class DoLoginUseCase
+public class DoLoginUseCase : IDoLoginUseCase
 {
   private readonly IUsersReadRepository _userReadRepository;
   private readonly IPasswordEncrypter _passwordEncrypt;
