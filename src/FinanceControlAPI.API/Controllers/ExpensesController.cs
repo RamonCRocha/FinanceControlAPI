@@ -6,11 +6,13 @@ using FinanceControlAPI.Application.UseCases.Expenses.Update;
 using FinanceControlAPI.Communication.Requests;
 using FinanceControlAPI.Communication.Responses;
 using FinanceControlAPI.Communication.Responses.Expenses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceControlAPI.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class ExpensesController : ControllerBase
 {
   [HttpPost]
