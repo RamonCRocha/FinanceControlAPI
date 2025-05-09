@@ -3,6 +3,7 @@ using FinanceControlAPI.API.Middleware;
 using FinanceControlAPI.Infrastructure;
 using FinanceControlAPI.Application;
 using FinanceControlAPI.Infrastructure.Migrations;
+using FinanceControlAPI.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
+
+builder.Services.AddProjectConfigurations(builder.Configuration);
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
@@ -28,6 +31,8 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<CultureMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
